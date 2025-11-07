@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_nugget"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    "ICI",
+    "ITI",
+    "ICI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eschaton:redstone_powered_lamp_block"
+  }
+}

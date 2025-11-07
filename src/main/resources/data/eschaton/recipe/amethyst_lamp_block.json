@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_nugget"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "minecraft:amethyst_cluster"
+    }
+  },
+  "pattern": [
+    "ICI",
+    "ITI",
+    "ICI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eschaton:amethyst_lamp_block"
+  }
+}

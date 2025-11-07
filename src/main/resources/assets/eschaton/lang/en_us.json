@@ -1,0 +1,16 @@
+{
+  "item.eschaton.fallium_key": "Fallium Key",
+  "item.eschaton.fallium_pebbles": "Fallium Pebbles",
+  "item.eschaton.fallium_plating":"Fallium Plating",
+
+  "block.eschaton.lamp_block": "Lamp",
+  "block.eschaton.soul_lamp_block": "Soul Lamp",
+  "block.eschaton.amethyst_lamp_block": "Amethyst Lamp",
+  "block.eschaton.redstone_powered_lamp_block": "Redstone Powered Lamp",
+  "block.eschaton.crimson_shroom_lamp_block": "Crimson Shroom Lamp",
+  "block.eschaton.warped_shroom_lamp_block": "Warped Shroom Lamp",
+  "block.eschaton.fallium_ore_block": "Fallium Ore",
+  "block.eschaton.sculk_jaw": "Sculk Jaw",
+
+  "itemgroups.eschaton.eschaton_additions": "Eschaton Additions"
+}

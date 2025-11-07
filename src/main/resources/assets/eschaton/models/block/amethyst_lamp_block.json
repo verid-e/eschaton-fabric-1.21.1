@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "eschaton:block/amethyst_lamp_block_bottom",
+    "side": "eschaton:block/amethyst_lamp_block_side",
+    "top": "eschaton:block/amethyst_lamp_block_top"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "eschaton:fallium_ore_block",
+    "eschaton:lamp_block",
+    "eschaton:soul_lamp_block",
+    "eschaton:amethyst_lamp_block",
+    "eschaton:redstone_powered_lamp_block",
+    "eschaton:crimson_shroom_lamp_block",
+    "eschaton:warped_shroom_lamp_block"
+
+
+  ]
+}

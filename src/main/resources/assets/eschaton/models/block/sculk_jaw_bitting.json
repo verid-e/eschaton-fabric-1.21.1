@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "eschaton:block/sculk_jaw_biting_top",
+    "bottom": "eschaton:block/sculk_jaw_side",
+    "side": "eschaton:block/sculk_jaw_side"
+  }
+}

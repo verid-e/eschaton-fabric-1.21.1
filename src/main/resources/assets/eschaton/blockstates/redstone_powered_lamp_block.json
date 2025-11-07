@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "eschaton:block/redstone_powered_lamp_block"
+    }
+  }
+}

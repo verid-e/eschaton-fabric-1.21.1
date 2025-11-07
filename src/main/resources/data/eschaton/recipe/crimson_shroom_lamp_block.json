@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:crimson_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "minecraft:shroomlight"
+    }
+  },
+  "pattern": [
+    "CIC",
+    "ITI",
+    "CIC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "eschaton:crimson_shroom_lamp_block"
+  }
+}

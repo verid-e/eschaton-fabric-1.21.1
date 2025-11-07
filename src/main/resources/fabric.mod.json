@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "eschaton",
+	"version": "${version}",
+	"name": "eschaton",
+	"description": "A mod about exploration, conquering and power.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/eschaton/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.verid.eschaton.Eschaton"
+		],
+		"fabric-datagen": [
+			"net.verid.eschaton.EschatonDataGenerator"
+		]
+	},
+	"mixins": [
+		"eschaton.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
