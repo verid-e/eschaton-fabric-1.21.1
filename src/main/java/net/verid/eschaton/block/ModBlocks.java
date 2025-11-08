@@ -35,7 +35,7 @@ public class ModBlocks {
 
         SCULK_JAW = registerBlock("sculk_jaw",
                 new SculkJawBlock(AbstractBlock.Settings.create()
-                        .strength(2.0f)
+                        .strength(0.15f)
                         .sounds(BlockSoundGroup.SCULK)
                         .luminance(state -> 3)
                         .nonOpaque()));
@@ -46,7 +46,6 @@ public class ModBlocks {
                         AbstractBlock.Settings.create()
                         .strength(1.5f)
                         .sounds(BlockSoundGroup.STONE)
-                        .luminance(state -> 15)
                                 .requiresTool()));
 
 

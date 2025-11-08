@@ -5,11 +5,11 @@
 	"name": "eschaton",
 	"description": "A mod about exploration, conquering and power.",
 	"authors": [
-		"Me!"
+		"verid_"
 	],
 	"contact": {
 		"homepage": "",
-		"sources": ""
+		"sources": "https://github.com/verid-e/eschaton-fabric-1.21.1"
 	},
 	"license": "MIT",
 	"icon": "assets/eschaton/icon.png",
