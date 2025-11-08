@@ -53,22 +53,23 @@ public class SculkJawBlock extends Block {
             // Play bite sound
             world.playSound(null, pos, SoundEvents.BLOCK_SCULK_SENSOR_CLICKING_STOP, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            // Get the DamageType safely
+            // Custom damage type
             RegistryKey<DamageType> sculkBiteKey = RegistryKey.of(
                     RegistryKeys.DAMAGE_TYPE,
                     Identifier.of("eschaton", "sculk_bite")
             );
-            RegistryEntry<DamageType> sculkBiteType = world.getRegistryManager()
-                    .get(RegistryKeys.DAMAGE_TYPE)
-                    .getEntry(sculkBiteKey)
-                    .orElseThrow();
 
-            // Create a custom "magic-like" damage source that ignores armor
-            // Use built-in magic damage source (bypasses armor like other magic damage)
-            DamageSource sculkBite = world.getDamageSources().magic();
+            DamageSource sculkBite = new DamageSource(
+                    world.getRegistryManager()
+                            .get(RegistryKeys.DAMAGE_TYPE)
+                            .entryOf(sculkBiteKey)
+            );
+
+// Apply damage once
             living.damage(sculkBite, 4.0F);
 
-            // Apply the damage
+
+            // Apply damage ONCE
             living.damage(sculkBite, 4.0F);
 
             // Spawn sculk soul particles

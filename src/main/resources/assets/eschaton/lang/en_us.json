@@ -12,8 +12,7 @@
   "block.eschaton.fallium_ore_block": "Fallium Ore",
   "block.eschaton.sculk_jaw": "Sculk Jaw",
 
-  "death.attack.sculk_bite": "%1$s was consumed by the Sculk.",
-  "death.attack.sculk_bite.player": "%1$s was consumed by the Sculk while fighting %2$s.",
+  "death.attack.sculk_bite": "%1$s was devoured by sculk",
 
   "itemgroups.eschaton.eschaton_additions": "Eschaton Additions"
 }
