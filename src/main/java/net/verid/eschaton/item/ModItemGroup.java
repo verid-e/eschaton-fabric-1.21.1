@@ -22,8 +22,9 @@ public class ModItemGroup {
                        entries.add(ModBlocks.REDSTONE_POWERED_LAMP_BLOCK);
                        entries.add(ModBlocks.WARPED_SHROOM_LAMP_BLOCK);
                        entries.add(ModBlocks.CRIMSON_SHROOM_LAMP_BLOCK);
+                        entries.add(ModBlocks.MOSSY_DEEPSLATE_BRICKS);
 
-                       entries.add(ModItems.FALLIUM_KEY);
+                        entries.add(ModItems.FALLIUM_KEY);
                         entries.add(ModItems.FALLIUM_PEBBLES);
                         entries.add(ModItems.FALLIUM_PLATING);
 

@@ -47,13 +47,10 @@ public class SculkJawBlock extends Block {
         super.onSteppedOn(world, pos, state, entity);
 
         if (!world.isClient && entity instanceof LivingEntity living && !state.get(BITING)) {
-            // Switch to biting
             world.setBlockState(pos, state.with(BITING, true), Block.NOTIFY_ALL);
 
-            // Play bite sound
             world.playSound(null, pos, SoundEvents.BLOCK_SCULK_SENSOR_CLICKING_STOP, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            // Custom damage type
             RegistryKey<DamageType> sculkBiteKey = RegistryKey.of(
                     RegistryKeys.DAMAGE_TYPE,
                     Identifier.of("eschaton", "sculk_bite")
@@ -65,14 +62,8 @@ public class SculkJawBlock extends Block {
                             .entryOf(sculkBiteKey)
             );
 
-// Apply damage once
-            living.damage(sculkBite, 4.0F);
+            living.damage(sculkBite, 16.0F);
 
-
-            // Apply damage ONCE
-            living.damage(sculkBite, 4.0F);
-
-            // Spawn sculk soul particles
             if (world instanceof ServerWorld serverWorld) {
                 for (int i = 0; i < 12; i++) {
                     double x = pos.getX() + 0.5 + (world.getRandom().nextDouble() - 0.5);
@@ -82,7 +73,6 @@ public class SculkJawBlock extends Block {
                 }
             }
 
-            // Revert back to non-biting after 30 ticks (~1.5 seconds)
             world.scheduleBlockTick(pos, this, 30);
         }
     }
@@ -92,7 +82,6 @@ public class SculkJawBlock extends Block {
         if (state.get(BITING)) {
             world.setBlockState(pos, state.with(BITING, false), Block.NOTIFY_ALL);
 
-            // Particle puff when reopening
             for (int i = 0; i < 8; i++) {
                 double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5);
                 double y = pos.getY() + 0.2 + random.nextDouble() * 0.3;

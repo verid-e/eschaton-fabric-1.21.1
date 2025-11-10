@@ -18,7 +18,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.BlockView;
 import net.verid.eschaton.Eschaton;
-import net.verid.eschaton.block.custom.SculkAgglomerationBlock;
 import net.verid.eschaton.block.custom.SculkJawBlock;
 
 public class ModBlocks {
@@ -30,12 +29,17 @@ public class ModBlocks {
     public static Block REDSTONE_POWERED_LAMP_BLOCK;
     public static Block FALLIUM_ORE_BLOCK;
     public static Block SCULK_JAW;
-    public static Block SCULK_AGGLOMERATION;
+    public static Block MOSSY_DEEPSLATE_BRICKS;
 
     public static void registerModBlocks() {
         Eschaton.LOGGER.info("Registering Mod Blocks for " + Eschaton.MOD_ID);
 
-        // SCULK JAW
+        MOSSY_DEEPSLATE_BRICKS= registerBlock("mossy_deepslate_bricks",
+                new Block(AbstractBlock.Settings.create()
+                        .strength(2f)
+                        .requiresTool()
+                        .sounds(BlockSoundGroup.STONE)));
+
         SCULK_JAW = registerBlock("sculk_jaw",
                 new SculkJawBlock(AbstractBlock.Settings.create()
                         .strength(0.15f)
@@ -43,15 +47,6 @@ public class ModBlocks {
                         .luminance(state -> 3)
                         .nonOpaque()));
 
-        // SCULK AGGLOMERATION
-        SCULK_AGGLOMERATION = registerBlock("sculk_agglomeration",
-                new SculkAgglomerationBlock(AbstractBlock.Settings.create()
-                        .strength(4.0f)
-                        .sounds(BlockSoundGroup.SCULK)
-                        .luminance(state -> 6)
-                        .nonOpaque()));
-
-        // FALLIUM ORE
         FALLIUM_ORE_BLOCK = registerBlock("fallium_ore_block",
                 new ExperienceDroppingBlock(UniformIntProvider.create(5, 7),
                         AbstractBlock.Settings.create()
@@ -59,7 +54,6 @@ public class ModBlocks {
                                 .sounds(BlockSoundGroup.STONE)
                                 .requiresTool()));
 
-        // LAMPS
         LAMP_BLOCK = registerBlock("lamp_block",
                 new Block(AbstractBlock.Settings.create()
                         .strength(1.5f)
@@ -90,7 +84,6 @@ public class ModBlocks {
                         .sounds(BlockSoundGroup.SHROOMLIGHT)
                         .luminance(state -> 15)));
 
-        // REDSTONE POWERED LAMP (anonymous subclass to provide redstone power)
         REDSTONE_POWERED_LAMP_BLOCK = registerBlock("redstone_powered_lamp_block",
                 new Block(AbstractBlock.Settings.create()
                         .requiresTool()
@@ -114,7 +107,6 @@ public class ModBlocks {
                     }
                 });
 
-        // Add blocks to creative tabs
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(entries -> {
             entries.add(REDSTONE_POWERED_LAMP_BLOCK);
         });
@@ -125,16 +117,17 @@ public class ModBlocks {
             entries.add(AMETHYST_LAMP_BLOCK);
             entries.add(WARPED_SHROOM_LAMP_BLOCK);
             entries.add(CRIMSON_SHROOM_LAMP_BLOCK);
-            entries.add(SCULK_AGGLOMERATION);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(FALLIUM_ORE_BLOCK);
             entries.add(SCULK_JAW);
         });
-    }
 
-    /* Helpers */
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            entries.add(MOSSY_DEEPSLATE_BRICKS);
+        });
+    }
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Eschaton.MOD_ID, name), block);
