@@ -20,6 +20,6 @@ public class Eschaton implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModItemGroup.registerItemGroups();
-        ModEffects.register();
+        ModEffects.registerEffects();
     }
 }
