@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import net.minecraft.registry.entry.RegistryEntry;
 
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
@@ -30,7 +31,7 @@ public abstract class InGameHudMixin {
         if (player == null) return;
 
         // check the effect directly
-        if (player.hasStatusEffect(ModEffects.SYSTOLIC_STILLNESS)) {
+        if (player.hasStatusEffect(RegistryEntry.of(ModEffects.SYSTOLIC_STILLNESS))) {
             RenderSystem.setShaderTexture(0, SYSTOLIC_HEARTS);
         }
     }
